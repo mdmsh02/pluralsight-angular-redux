@@ -1,4 +1,4 @@
-import { FILTER_COURSE } from './actions';
+import { FILTER_COURSE } from '../courses/course.action';
 import { IAppState } from './IAppState';
 
 const courses = [

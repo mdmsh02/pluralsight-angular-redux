@@ -1,3 +1,4 @@
+import { CourseActions } from './courses/course.action';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -47,6 +48,7 @@ import {store,IAppState} from './store';
     SpinnerService,
     ModalService,
     ExceptionService,
+    CourseActions
   ],
   bootstrap: [AppComponent]
 })
