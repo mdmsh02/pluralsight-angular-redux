@@ -1,7 +1,7 @@
+import { FILTER_COURSE } from './actions';
 import { IAppState } from './IAppState';
 
-const initialState:IAppState = {
-    courses:[
+const courses = [
         {
             id:1,
             name:"Building app with redux(local)",
@@ -17,9 +17,23 @@ const initialState:IAppState = {
             name:"Building app with angular and redux",
             topic:"angular and redux"
         }
-    ]
+];
+const initialState:IAppState = {
+    courses,
+    filteredCourse : courses
+}
+function filterCourse(state, action) : IAppState{
+    return Object.assign({},state, {
+        filteredCourse: state.courses.filter( c =>c.name.toLowerCase().indexOf(
+            action.searchText.toLowerCase()) > -1),
+    });
 }
 
 export function reducer(state=initialState, action){
-    return state;
+    switch(action.type) {
+        case FILTER_COURSE:
+            return filterCourse(state,action);
+        default:
+        return state;    
+    }
 }
