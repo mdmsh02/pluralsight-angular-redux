@@ -22,6 +22,7 @@ export class CourseListComponent implements OnInit {
     this.courseAction.filterCourse(searchText);
   }
   ngOnInit() {
+    this.courseAction.getCourses();
     componentHandler.upgradeDom();
   }
 }
